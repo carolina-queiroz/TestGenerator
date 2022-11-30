@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.example.testgenerator.ui.view.HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvBarra"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@color/colorBlue"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="106dp"
+            android:layout_height="72dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/logo_univesp"
+            app:layout_constraintBottom_toBottomOf="@id/tvBarra"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvBarra"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Bem vindo, ao gerador de provas!"
+            android:textColor="@color/colorBlue"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvBarra" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Para criar sua prova selecione as materias desejadas e o número de questões desejadas."
+            android:textColor="@color/colorDark1"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/tf_number_port"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:hint="Número de questões"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/cb_port"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tvContent">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/et_number_port"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="text" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:onClick="onCheckboxClicked"
+            android:text="Portugues"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvContent" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_ing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:onClick="onCheckboxClicked"
+            android:text="Ingles"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_port" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_mat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:onClick="onCheckboxClicked"
+            android:text="Matematica"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_ing" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:onClick="onCheckboxClicked"
+            android:text="Biologia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_mat" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_fis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:onClick="onCheckboxClicked"
+            android:text="Fisica"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_bio" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_qui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:onClick="onCheckboxClicked"
+            android:text="Quimica"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_fis" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_generate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/purple_700"
+            android:paddingLeft="16dp"
+            android:text="Gerar Prova"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cb_qui" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
